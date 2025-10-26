@@ -1,5 +1,5 @@
 # Learn-Japanese-Website
-An online learning platform for learning Japanese.
+An online learning platform for learning the Japanese hirigana and katana alphabets.
 
 Platform for hosting lessons and tracking user progress.
 
