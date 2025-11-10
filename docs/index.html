@@ -1,0 +1,125 @@
+<!-- Tells browser this is HTML5 DOC. Helps read and display page properly -->
+<!DOCTYPE html>
+<!-- The <html> tag wraps around ALL the content on the webpage and 'lang="en"' means the page is written in English. -->
+<html lang="en">
+    <!-- Contains information about the webpage. Does not directly display anything.-->
+    <head>
+        <!-- This line tells the browser what kind of text encoding to use.
+             'UTF-8' supports most world languages, including Japanese! -->
+        <meta charset="UTF-8">
+        <!-- Link to the Cascading Style Sheet (CSS) for the website.-->
+        <link rel="stylesheet" href="styles.css">
+        <!-- The <title> is what appears as the browser tab and bookmark. -->
+        <title>Learn Japanese Platform</title>
+    </head>
+    <!-- The <body> contains all webpage components. -->
+    <body>
+        <!-- Dedicated slow background layer object.-->
+        <!-- More effective than attempting to edit the default background.-->
+        <div class="bg" aria-hidden="true" data-bg-speed="0.25"></div> <!-- No content; purely decorative -->
+        <!-- Sectional header usually reserved for titles and top navigational bars.-->
+        <header>
+            <h1>Learn Japanese</h1>
+        </header>
+
+        <!-- The container that will hold the hirigana and katakana alphabets.-->
+        <main class="alphabet">
+            <!-- Tabs: add proper hash hrefs, roles, and aria for accessibility -->
+            <ul id="nav-tab" class="nav" role="tablist"> <!-- role helps screen readers understand this is a tab list -->
+            <li class="active"> <!-- a visual helper class we'll style in CSS -->
+                <!-- hash points to the panel id below -->
+                <!-- identifies this link as a tab -->
+                <!-- tells AT which panel this tab controls -->
+                <!-- marks this as the currently selected tab -->
+                <a
+                href="#hiragana"              
+                role="tab"                    
+                aria-controls="hiragana"      
+                aria-selected="true"          
+                >Hiragana</a>
+            </li>
+            <li>
+                <!-- hash points to the panel id below -->
+                <!-- identifies this link as a tab -->
+                <!-- identifies this link as a tab -->
+                <!-- tells AT which panel this tab controls -->
+                <!-- not selected by default -->
+                <a
+                href="#katakana"              
+                role="tab"                   
+                aria-controls="katakana"      
+                aria-selected="false"         
+                >Katakana</a>
+            </li>
+            </ul>
+
+            <!-- Panels: give each one an id that matches the tab href -->
+            <!-- must match href="#hiragana" -->
+            <!-- keeps your great accessible heading -->
+            <!-- panel styling hook -->
+            <!-- identifies this region as a tab panel -->
+            <!-- not hidden: this is the default visible panel -->
+            <section
+            id="hiragana"                     
+            aria-labelledby="hiragana-heading"
+            class="alphabet-content"          
+            role="tabpanel"                   
+            >                                  
+                <h2 id="hiragana-heading">Hiragana</h2>
+                <!-- table object which holds hirigana alphabet -->
+                <table class="gana-chart">
+                    <thead>
+                        <tr><th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th> </th><td>あ</td><td>い</td><td>う</td><td>え</td><td>お</td></tr>
+                        <tr><th>k</th><td>か</td><td>き</td><td>く</td><td>け</td><td>こ</td></tr>
+                        <tr><th>s</th><td>さ</td><td>し</td><td>す</td><td>せ</td><td>そ</td></tr>
+                        <tr><th>t</th><td>た</td><td>ち</td><td>つ</td><td>て</td><td>と</td></tr>
+                        <tr><th>n</th><td>な</td><td>に</td><td>ぬ</td><td>ね</td><td>の</td></tr>
+                        <tr><th>h</th><td>は</td><td>ひ</td><td>ふ</td><td>へ</td><td>ほ</td></tr>
+                        <tr><th>m</th><td>ま</td><td>み</td><td>む</td><td>め</td><td>も</td></tr>
+                        <tr><th>y</th><td>や</td><td> </td><td>ゆ</td><td> </td><td>よ</td></tr>
+                        <tr><th>r</th><td>ら</td><td>り</td><td>る</td><td>れ</td><td>ろ</td></tr>
+                        <tr><th>w</th><td>わ</td><td> </td><td> </td><td> </td><td>を</td></tr>
+                        <tr><th> </th><td> </td><td> </td><td>ん</td><td> </td><td> </td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- must match href="#katakana" -->
+            <!-- hidden by default until its tab is clicked -->
+            <section
+                id="katakana"
+                aria-labelledby="katakana-heading"
+                class="alphabet-content"
+                role="tabpanel"
+                hidden                            
+            >
+                <h2 id="katakana-heading">Katakana</h2>
+                <!-- table content-->
+                <table class="kana-chart">
+                    <thead>
+                        <tr><th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th> </th><td>ア</td><td>イ</td><td>ウ</td><td>エ</td><td>オ</td></tr>
+                        <tr><th>k</th><td>カ</td><td>キ</td><td>ク</td><td>ケ</td><td>コ</td></tr>
+                        <tr><th>s</th><td>サ</td><td>シ</td><td>ス</td><td>セ</td><td>ソ</td></tr>
+                        <tr><th>t</th><td>タ</td><td>チ</td><td>ツ</td><td>テ</td><td>ト</td></tr>
+                        <tr><th>n</th><td>ナ</td><td>ニ</td><td>ヌ</td><td>ネ</td><td>ノ</td></tr>
+                        <tr><th>h</th><td>ハ</td><td>ヒ</td><td>フ</td><td>ヘ</td><td>ホ</td></tr>
+                        <tr><th>m</th><td>マ</td><td>ミ</td><td>ム</td><td>メ</td><td>モ</td></tr>
+                        <tr><th>y</th><td>ヤ</td><td> </td><td>ユ</td><td> </td><td>ヨ</td></tr>
+                        <tr><th>r</th><td>ラ</td><td>リ</td><td>ル</td><td>レ</td><td>ロ</td></tr>
+                        <tr><th>w</th><td>ワ</td><td> </td><td> </td><td> </td><td>ヲ</td></tr>
+                        <tr><th> </th><td> </td><td> </td><td>ン</td><td> </td><td> </td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    <!-- Javascript files go here:-->
+    <script src="table.js" defer></script> <!-- Forces background to move at a slower rate-->
+    <script src="romanji.js" defer></script> <!-- load the standalone script, run after parse -->
+    </body>
+</html>
