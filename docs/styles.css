@@ -44,7 +44,7 @@ body {
 }
 
 /* Keep your content above the layer */
-header, .alphabet {                               /* Lift header and main above .bg-slow */
+header, .alphabet, .learning {                               /* Lift header and main above .bg-slow */
   position: relative;                             /* Create stacking context */
   z-index: 1;                                     /* Ensure they sit on top */
 }
@@ -77,7 +77,11 @@ header::after {                       /* decorative shadow element AFTER header 
   );
 }
 
-/* ----- Container “window” styling ----- */
+
+
+
+
+/* ----- Container Styling for Alphabet Tables Window ----- */
 .alphabet {                          /* targets your <main class="alphabet"> wrapper */
   max-width: 900px;                  /* keeps the window from getting too wide */
   margin: 10rem auto;                 /* centers horizontally with space above/below */
@@ -86,14 +90,14 @@ header::after {                       /* decorative shadow element AFTER header 
   padding: 1.25rem;                  /* inner breathing room */
   box-shadow: 0 10px 25px rgba(0,0,0,0.50); /* soft drop shadow */
 
-  --glyph-size: clamp(1.8rem, 6vw, 5rem);          /* big kana characters: min 1.8rem, scale with viewport, cap at 3.6rem */
-  --label-size: clamp(0.9rem, 3vw, 2.5rem);      /* smaller row/column labels so kana stay dominant */
-  --cell-pad: clamp(0.35rem, 1.2vw, 0.75rem);      /* cell padding that scales mildly with screen size */
+  --glyph-size: clamp(3.6rem, 6vw, 5rem);          /* big kana characters: min 1.8rem, scale with viewport, cap at 3.6rem */
+  --label-size: clamp(1.8rem, 3vw, 2.5rem);      /* smaller row/column labels so kana stay dominant */
+  --cell-pad: clamp(0.7rem, 1.2vw, 0.75rem);      /* cell padding that scales mildly with screen size */
 }
 
 /* ----- Table styling ----- */
 .alphabet-content > h2 {                               /* only the heading inside the panel */
-  font-size: clamp(1.25rem, 3.2vw, 2.5rem);            /* fluid size: modest min/max so it doesn’t explode */
+  font-size: clamp(2rem, 3.2vw, 2.5rem);               /* fluid size: modest min/max so it doesn’t explode */
   font-weight: 800;                                    /* strong amount of bolding on the text */
   line-height: 1.1;                                    /* tighten vertical leading around the text */
   margin-block: 0.25em 0.5em;                          /* smaller top/bottom margins, scale with font size */
@@ -202,4 +206,71 @@ header::after {                       /* decorative shadow element AFTER header 
 @keyframes fadeIn {
   from { opacity: 0; }               /* start transparent */
   to   { opacity: 1; }               /* end fully visible */
+}
+
+
+
+
+
+/* ----- Container Styling for Lessons and Quizzes Window ----- */
+.learning {                          /* targets your <main class="alphabet"> wrapper */
+  max-width: 900px;                  /* keeps the window from getting too wide */
+  margin: 10rem auto;                 /* centers horizontally with space above/below */
+  background: var(--brand);          /* background color for the window */
+  border-radius: 16px;               /* nice rounded corners */
+  padding: 1.25rem;                  /* inner breathing room */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.50); /* soft drop shadow */
+
+  --glyph-size: clamp(3.6rem, 6vw, 5rem);         /* big kana characters: min 1.8rem, scale with viewport, cap at 3.6rem */
+  --label-size: clamp(1.8rem, 3vw, 2.5rem);       /* smaller row/column labels so kana stay dominant */
+  --cell-pad: clamp(0.7rem, 1.2vw, 0.75rem);      /* cell padding that scales mildly with screen size */
+}
+
+.lesson-content,.quiz-content {               /* visible content panel */
+  animation: fadeIn 160ms ease;               /* tiny polish */
+  background: var(--panel);                   /* same bg as active tab for continuity */
+  border: 2px solid var(--line);              /* panel border to match tabs’ line */
+  border-top: 0;                              /* remove top border to fuse with active tab */
+  border-radius: 0 0 10px 10px;               /* rounded bottom corners */
+  margin-top: 0;                              /* no extra space above */
+  padding: 0.75rem 1rem;                      /* breathing room for content */
+}
+
+/* ----- Table styling ----- */
+.lesson-content > h2, .quiz-content > h2 {                               /* only the heading inside the panel */
+  font-size: clamp(2rem, 3.2vw, 2.5rem);            /* fluid size: modest min/max so it doesn’t explode */
+  font-weight: 800;                                    /* strong amount of bolding on the text */
+  line-height: 1.1;                                    /* tighten vertical leading around the text */
+  margin-block: 0.25em 0.5em;                          /* smaller top/bottom margins, scale with font size */
+  text-align: center;                                  /* center the heading text */
+}
+
+.item-list {                           /* wraps lesson/quiz rows */
+  list-style: none;                    /* remove default bullets */
+  margin: 0;                           /* reset margins */
+  padding: 0;                          /* reset padding */
+  display: grid;                       /* grid for clean vertical rhythm */
+  gap: 0.75rem;                        /* space between rows */
+}
+
+.item {                                             /* the <details> “card” */
+  font-size: clamp(1rem, 1.6vw, 2.5rem);            /* fluid size: modest min/max so it doesn’t explode */
+  background: var(--brand);                         /* branded color body */
+  border-radius: 10px;                              /* rounded corners */
+  box-shadow: 0 1px 6px rgba(0,0,0,.12);          /* soft shadow */
+  overflow: hidden;                                 /* hide inner overflow */
+}
+
+.item > summary {                      /* clickable header area */
+  cursor: pointer;                     /* pointer cursor */
+  padding: 0.85rem 1rem;               /* comfy click target */
+  font-weight: 600;                    /* stronger (bolder) label */
+  outline: none;                       /* let focus style handle outline */
+  list-style: none;                    /* remove default marker */
+}
+
+.item .item-body {                     /* revealed content */
+  padding: 0.85rem 1rem;               /* inner spacing */
+  line-height: 1.5;                    /* readable lines */
+  font-size: 1rem;                     /* slightly smaller body text */
 }

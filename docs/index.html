@@ -118,8 +118,52 @@
                 </table>
             </section>
         </main>
+
+        <section class="learning">                                <!-- second window is now separate -->
+        <ul id="learn-tab" class="nav" role="tablist">            <!-- unique id, same .nav styling ok -->
+            <li class="active">
+                <a href="#lesson" role="tab" aria-controls="lesson" aria-selected="true">Lessons</a>
+            </li>
+            <li>
+                <a href="#quiz" role="tab" aria-controls="quiz" aria-selected="false">Quizzes</a>
+            </li>
+        </ul>
+
+            <section id="lesson" class="lesson-content" role="tabpanel" aria-labelledby="lesson-heading">
+                <h2 id="lesson-heading">Lessons</h2>
+                    <ul class="item-list"> <!-- container list to stack lesson items vertically -->
+                    <li> <!-- one lesson “row” -->
+                        <details class="item"> <!-- native dropdown component -->
+                        <summary>Hiragana Vowels — a / i / u / e / o</summary> <!-- the clickable header -->
+                        <div class="item-body"> <!-- the revealed content area -->
+                            <p>Learn sounds, stroke order, and common words.</p> <!-- short description -->
+                            <ul> <!-- quick bullet list of what’s inside -->
+                            <li>Audio + romaji</li> <!-- feature 1 -->
+                            <li>Stroke order diagrams</li> <!-- feature 2 -->
+                            <li>Mini practice</li> <!-- feature 3 -->
+                            </ul>
+                        </div>
+                        </details>
+                    </li>
+
+                    <li> <!-- another lesson -->
+                        <details class="item"> <!-- dropdown 2 -->
+                        <summary>Dakuten / Handakuten (voiced & “p” sounds)</summary> <!-- header text -->
+                        <div class="item-body"> <!-- content area -->
+                            <p>How か→が, さ→ざ, は→ば/ぱ change the sound.</p> <!-- description -->
+                        </div>
+                        </details>
+                    </li>
+            </section>
+
+            <section id="quiz" class="quiz-content" role="tabpanel" aria-labelledby="quiz-heading" hidden>
+                <h2 id="quiz-heading">Quizzes</h2>
+                <!-- quiz items here -->
+            </section>
+        </section>
     <!-- Javascript files go here:-->
-    <script src="table.js" defer></script> <!-- Forces background to move at a slower rate-->
-    <script src="romanji.js" defer></script> <!-- load the standalone script, run after parse -->
+    <script src="alphabet-table.js" defer></script>              <!-- Adds tab functionality to alphabets window-->
+    <script src="lesson-table.js" defer></script>       <!-- Adds tab functionality to lessons & quizzes window-->
+    <script src="romanji.js" defer></script>            <!-- load script that adds romanization underneath alphabet -->
     </body>
 </html>
