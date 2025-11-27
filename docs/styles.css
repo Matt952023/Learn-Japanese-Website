@@ -81,7 +81,7 @@ header::after {                       /* decorative shadow element AFTER header 
 
 
 
-/* ----- Container Styling for Alphabet Tables Window ----- */
+/* ====== Container Styling for Alphabet Tables Window ====== */
 .alphabet {                          /* targets your <main class="alphabet"> wrapper */
   max-width: 900px;                  /* keeps the window from getting too wide */
   margin: 10rem auto;                 /* centers horizontally with space above/below */
@@ -212,7 +212,7 @@ header::after {                       /* decorative shadow element AFTER header 
 
 
 
-/* ----- Container Styling for Lessons and Quizzes Window ----- */
+/* ====== Container Styling for Lessons and Quizzes Window ====== */
 .learning {                          /* targets your <main class="alphabet"> wrapper */
   max-width: 900px;                  /* keeps the window from getting too wide */
   margin: 10rem auto;                 /* centers horizontally with space above/below */
@@ -273,4 +273,108 @@ header::after {                       /* decorative shadow element AFTER header 
   padding: 0.85rem 1rem;               /* inner spacing */
   line-height: 1.5;                    /* readable lines */
   font-size: 1rem;                     /* slightly smaller body text */
+}
+
+
+/*===== QUIZ CONTENT ======*/
+
+/* force a single column for quiz list */
+#quiz .item-list {                  /* target just the quiz panel's list */
+  display: grid;                    /* grid gives easy single-column control */
+  grid-template-columns: 1fr;       /* one column that fills the width */
+  gap: 0.75rem;                     /* vertical spacing between items */
+}
+
+#quiz .item {                       /* the dropdown “card” in quizzes */
+  width: 100%;                      /* stretch across the column */
+}
+
+#quiz button:hover:not(:disabled) { /* when hovering over an active button */
+  filter: brightness(0.97);                      /* make the whole button just a bit darker */
+}
+
+#quiz button:active:not(:disabled) { /* when pressing the button */
+  filter: brightness(0.92);                       /* darker while pressed */
+  transform: translateY(1px);                     /* tiny downward nudge for a “press” feel */
+}
+
+.start-quiz {
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.6rem 0.75rem;          /* comfy touch target */
+  border-radius: 8px;               /* rounded look */
+  border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.3);          /* DIM the existing border without changing its style */
+  background: var(--brand);         /* white background */
+  cursor: pointer;                  /* clickable cursor */
+}
+
+/* small visual polish for the inline quiz UI */
+.inline-quiz {                      /* the container JS injects */
+  margin-top: 0.75rem;              /* space from the button/summary */
+  border-radius: 10px;              /* rounded corners */
+  background: var(--panel);
+  padding: 0.75rem;                 /* inner spacing */
+}
+.inline-quiz h3 {                   /* question header */
+  margin: 0 0 0.5rem;               /* tighten spacing */
+  font-size: 1.1rem;                /* modestly larger */
+}
+
+.inline-quiz .choices {                    /* layout for the container holding the four answers */
+  display: grid;                           /* use CSS grid to arrange the buttons */
+  grid-template-columns: 1fr;              /* default: single column layout */
+  gap: 0.5rem;                             /* space between the buttons */
+  margin-bottom: 0.75rem;                  /* breathing room under the answers */
+}
+
+@media (min-width: 600px) {                /* apply these styles only on screens 600px wide or more */
+  .inline-quiz .choices {                  /* change layout for larger screens */
+    grid-template-columns: 1fr 1fr;        /* two equal-width columns (2 buttons per row) */
+  }
+}
+
+.inline-quiz button.choice {        /* each answer button */
+  width: 100%;                      /* full width for easy tapping */
+  padding: 0.6rem 0.75rem;          /* comfy touch target */
+  border-radius: 8px;               /* rounded look */
+  border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.3);          /* DIM the existing border without changing its style */
+  background: var(--brand);         /* white background */
+  font-weight: 700;                        /* bold label to stand out */
+  color: var(--text);
+  font-size: 1.5rem;                         /* slightly larger text */
+  cursor: pointer;                  /* clickable cursor */
+}
+.inline-quiz button.choice:disabled {               /* style only disabled answer buttons */
+  opacity: 0.60;                                    /* fade the whole button to look inactive */
+  cursor: default;                                  /* go back to the normal arrow cursor */
+  border-color: rgba(0, 0, 0, 0.30);                /* soften the border even more when disabled */
+  background: var(--brand);                         /* keep the same base color (or adjust if you prefer) */
+}
+
+
+.inline-quiz .next {
+  width: 10%;                      /* full width for easy tapping */
+  padding: 0.6rem 0.75rem;          /* comfy touch target */
+  border-radius: 8px;               /* rounded look */
+  border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.3);          /* DIM the existing border without changing its style */
+  font-weight: 600;
+  background: var(--brand);         /* white background */
+  cursor: pointer;                  /* clickable cursor */
+}
+.inline-quiz .status {              /* per-question feedback area */
+  font-size: clamp(1rem, 1.6vw, 2.5rem);            /* fluid size: modest min/max so it doesn’t explode */
+  color: var(--text);
+  font-weight: 600;
+  min-height: 1.25rem;              /* reserve space to avoid layout jump */
+  margin-bottom: 0.5rem;            /* a little gap */
+  text-align: center;               /* center the heading text */
+}
+.inline-quiz .score {               /* final score display */
+  font-size: clamp(1rem, 1.6vw, 2.5rem);            /* fluid size: modest min/max so it doesn’t explode */
+  color: var(--text);
+  font-weight: 700;                 /* emphasize score */
+  margin-top: 0.5rem;               /* space above score */
 }

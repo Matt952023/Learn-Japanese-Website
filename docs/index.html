@@ -136,12 +136,87 @@
                         <details class="item"> <!-- native dropdown component -->
                         <summary>Hiragana Vowels — a / i / u / e / o</summary> <!-- the clickable header -->
                         <div class="item-body"> <!-- the revealed content area -->
-                            <p>Learn sounds, stroke order, and common words.</p> <!-- short description -->
-                            <ul> <!-- quick bullet list of what’s inside -->
-                            <li>Audio + romaji</li> <!-- feature 1 -->
-                            <li>Stroke order diagrams</li> <!-- feature 2 -->
-                            <li>Mini practice</li> <!-- feature 3 -->
-                            </ul>
+                            <p>The first five characters in Hirigana is あ, い, う, え, and お.
+                            These characters are important because they establish the five basic vowels of
+                            Japanese. Almost every other hirigana combines one consonant and one of these five vowels. 
+                            <section class="kana-notes"> <!-- outer container wrapping all vowel sections -->
+
+                                <article class="kana-card"> <!-- card for あ (a) -->
+                                    <h2>あ (a)</h2> <!-- heading showing the hiragana and romaji -->
+
+                                    <p><strong>Romaji:</strong> a</p> <!-- line describing the romaji spelling -->
+                                    <p><strong>Pronunciation:</strong> like the “a” in “father” (ah).</p> <!-- pronunciation explanation -->
+
+                                    <h3>Use examples:</h3> <!-- subheading for the example words list -->
+                                    <ul> <!-- unordered list of example words -->
+                                    <li><ruby>あさ<rt>asa</rt></ruby> – morning</li> <!-- example word with ruby showing romaji -->
+                                    <li><ruby>あめ<rt>ame</rt></ruby> – rain or candy (different kanji)</li> <!-- second example word -->
+                                    </ul> <!-- end of example list -->
+
+                                    <p>Often appears at the start of many beginner words and basic phrases.</p> <!-- extra note about usage -->
+                                </article> <!-- end card for あ (a) -->
+
+                                <article class="kana-card"> <!-- card for い (i) -->
+                                    <h2>い (i)</h2> <!-- heading showing the hiragana and romaji -->
+
+                                    <p><strong>Romaji:</strong> i</p> <!-- line describing the romaji spelling -->
+                                    <p><strong>Pronunciation:</strong> like “ee” in “see”.</p> <!-- pronunciation explanation -->
+
+                                    <h3>Use examples:</h3> <!-- subheading for the example words list -->
+                                    <ul> <!-- unordered list of example words -->
+                                    <li><ruby>いぬ<rt>inu</rt></ruby> – dog</li> <!-- example word with romaji in ruby -->
+                                    <li><ruby>いえ<rt>ie</rt></ruby> – house</li> <!-- second example word -->
+                                    </ul> <!-- end of example list -->
+
+                                    <p>Shows up in many adjectives ending in 〜い (like たかい = tall/expensive).</p> <!-- extra note about usage -->
+                                </article> <!-- end card for い (i) -->
+
+                                <article class="kana-card"> <!-- card for う (u) -->
+                                    <h2>う (u)</h2> <!-- heading showing the hiragana and romaji -->
+
+                                    <p><strong>Romaji:</strong> u</p> <!-- line describing the romaji spelling -->
+                                    <p><strong>Pronunciation:</strong> like “oo” in “food”, but often very short and sometimes almost whispered in casual speech.</p> <!-- pronunciation explanation -->
+
+                                    <h3>Use examples:</h3> <!-- subheading for the example words list -->
+                                    <ul> <!-- unordered list of example words -->
+                                    <li><ruby>うみ<rt>umi</rt></ruby> – sea</li> <!-- example word with romaji in ruby -->
+                                    <li><ruby>うた<rt>uta</rt></ruby> – song</li> <!-- second example word -->
+                                    </ul> <!-- end of example list -->
+
+                                    <p>Also used in verb endings like 〜う, 〜く, 〜す (dictionary forms).</p> <!-- extra note about usage -->
+                                </article> <!-- end card for う (u) -->
+
+                                <article class="kana-card"> <!-- card for え (e) -->
+                                    <h2>え (e)</h2> <!-- heading showing the hiragana and romaji -->
+
+                                    <p><strong>Romaji:</strong> e</p> <!-- line describing the romaji spelling -->
+                                    <p><strong>Pronunciation:</strong> like “e” in “get” (not like “ee”).</p> <!-- pronunciation explanation -->
+
+                                    <h3>Use examples:</h3> <!-- subheading for the example words list -->
+                                    <ul> <!-- unordered list of example words -->
+                                    <li><ruby>えき<rt>eki</rt></ruby> – station</li> <!-- example word with romaji in ruby -->
+                                    <li><ruby>えんぴつ<rt>enpitsu</rt></ruby> – pencil</li> <!-- second example word -->
+                                    </ul> <!-- end of example list -->
+
+                                    <p>Shows up in many basic nouns and particles (like へ which is pronounced “e” when used as a particle).</p> <!-- extra note about usage -->
+                                </article> <!-- end card for え (e) -->
+
+                                <article class="kana-card"> <!-- card for お (o) -->
+                                    <h2>お (o)</h2> <!-- heading showing the hiragana and romaji -->
+
+                                    <p><strong>Romaji:</strong> o</p> <!-- line describing the romaji spelling -->
+                                    <p><strong>Pronunciation:</strong> like “o” in “orange” but without the “w” glide (more like a pure “oh”).</p> <!-- pronunciation explanation -->
+
+                                    <h3>Use examples:</h3> <!-- subheading for the example words list -->
+                                    <ul> <!-- unordered list of example words -->
+                                    <li><ruby>おかね<rt>okane</rt></ruby> – money</li> <!-- example word with romaji in ruby -->
+                                    <li><ruby>おちゃ<rt>ocha</rt></ruby> – tea</li> <!-- second example word -->
+                                    </ul> <!-- end of example list -->
+
+                                    <p>Often appears in polite words starting with お〜 as an honorific prefix (like おちゃ, おなまえ).</p> <!-- extra note about usage -->
+                                </article> <!-- end card for お (o) -->
+
+                            </section> <!-- end of outer container for all vowel notes -->
                         </div>
                         </details>
                     </li>
@@ -158,12 +233,47 @@
 
             <section id="quiz" class="quiz-content" role="tabpanel" aria-labelledby="quiz-heading" hidden>
                 <h2 id="quiz-heading">Quizzes</h2>
-                <!-- quiz items here -->
+                    <ul class="item-list"> <!-- stack quiz entries in one column -->
+                    <li> <!-- quiz row 1 -->
+                        <details class="item"> <!-- dropdown for quiz info -->
+                        <summary>All Hiragana — 10 Questions</summary> <!-- clickable header -->
+                        <div class="item-body"> <!-- revealed content -->
+                            <p>10 questions, multiple choice. Score shown at the end.</p> <!-- tiny description -->
+                            <!-- class="start-quiz" = hook for JS -->
+                            <!-- data-mode="hiragana" = tells JS which set to use --> 
+                            <button
+                            type="button"
+                            class="start-quiz"                            
+                            data-mode="hiragana"
+                            >Start Hiragana Quiz</button>
+                            <div class="quiz-host"></div>       <!-- JS injects the quiz UI here -->
+                        </div>
+                        </details>
+                    </li>
+
+                    <li> <!-- quiz row 2 -->
+                        <details class="item">
+                        <summary>All Katakana — 10 Questions</summary>
+                        <div class="item-body">
+                            <p>10 questions, multiple choice. Score shown at the end.</p>
+                            <!-- class="start-quiz" = hook for JS -->
+                            <!-- data-mode="katakana" = tells JS which set to use --> 
+                            <button
+                            type="button"
+                            class="start-quiz"
+                            data-mode="katakana"
+                            >Start Katakana Quiz</button>
+                            <div class="quiz-host"></div>                   <!-- JS injects the quiz UI here -->
+                        </div>
+                        </details>
+                    </li>
+                    </ul>
             </section>
         </section>
     <!-- Javascript files go here:-->
     <script src="alphabet-table.js" defer></script>              <!-- Adds tab functionality to alphabets window-->
     <script src="lesson-table.js" defer></script>       <!-- Adds tab functionality to lessons & quizzes window-->
     <script src="romanji.js" defer></script>            <!-- load script that adds romanization underneath alphabet -->
+    <script src="quiz-inline.js" defer></script>
     </body>
 </html>
