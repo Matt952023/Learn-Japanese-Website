@@ -12,14 +12,19 @@
 
 /* Global document styling */
 html {                         /* root element of the page */
-  min-height: 100%;            /* ensure it’s at least as tall as the viewport */
+  margin: 0;                       /* remove default browser margin */
+  padding: 0;                      /* remove default browser padding */
+  width: 100%;                     /* never be wider than the viewport */
+  min-height: 100%;                /* at least as tall as the screen */
 }
 
 body {
   background-position: center 0; /* Start background from a known spot. */
   /* remove the default page gap */
-  margin: 0;
-  min-height: 100%;                            /* also stretch the body to full viewport height */
+  margin: 0;                       /* you already have this, safe to repeat */
+  padding: 0;                      /* no extra padding around the page */
+  width: 100%;                     /* keep the body the same width as the viewport */
+  min-height: 100%;                /* let background cover full height */
   font-family: var(--font);                    /* Inherit font to all text unless overridden */
   color: var(--text);                          /* Default text color site-wide */
 
@@ -94,9 +99,9 @@ header::after {                       /* decorative shadow element AFTER header 
   padding: 1.25rem;                  /* inner breathing room */
   box-shadow: 0 10px 25px rgba(0,0,0,0.50); /* soft drop shadow */
 
-  --glyph-size: clamp(3.6rem, 6vw, 5rem);          /* big kana characters: min 1.8rem, scale with viewport, cap at 3.6rem */
-  --label-size: clamp(1.8rem, 3vw, 2.5rem);      /* smaller row/column labels so kana stay dominant */
-  --cell-pad: clamp(0.7rem, 1.2vw, 0.75rem);      /* cell padding that scales mildly with screen size */
+  --glyph-size: clamp(2rem, 6vw, 5rem);          /* big kana characters: min 1.8rem, scale with viewport, cap at 3.6rem */
+  --label-size: clamp(1rem, 3vw, 2.5rem);      /* smaller row/column labels so kana stay dominant */
+  --cell-pad: clamp(0.35rem, 1.2vw, 0.75rem);      /* cell padding that scales mildly with screen size */
 }
 
 /* ----- Table styling ----- */
@@ -198,7 +203,8 @@ header::after {                       /* decorative shadow element AFTER header 
 .alphabet-content {                           /* visible content panel */
   display: flex;                              /* enable flex layout */
   flex-direction: column;                     /* stack header and table vertically */
-  align-items: center;                        /* center children horizontally */
+  align-items: stretch;                       /* let children fill the panel width */
+  overflow-x: auto;                           /* if something is wider, allow horizontal scroll */
   animation: fadeIn 160ms ease;               /* tiny polish */
   background: var(--panel);                   /* same bg as active tab for continuity */
   border: 2px solid var(--line);              /* panel border to match tabs’ line */
@@ -206,7 +212,6 @@ header::after {                       /* decorative shadow element AFTER header 
   border-radius: 0 0 10px 10px;               /* rounded bottom corners */
   margin-top: 0;                              /* no extra space above */
   padding: 0.75rem 1rem;                      /* breathing room for content */
-  overflow-x: auto;                           /* allow horizontal scrolling if table is wider */
   max-width: 100%;                            /* don’t let the panel itself exceed the window */
 }
 
