@@ -65,7 +65,7 @@ const HIRAGANA_POOL = [                                         // list of basic
   { glyph: 'ろ', romanji: 'ro' },                                // ろ -> "ro"
 
   { glyph: 'わ', romanji: 'wa' },                                // わ -> "wa"
-  { glyph: 'を', romanji: 'o' },                                 // を -> pronounced "o" in modern Japanese
+  { glyph: 'を', romanji: 'w/o' },                                 // を -> pronounced "o" in modern Japanese
 
   { glyph: 'ん', romanji: 'n' },                                 // ん -> final "n" sound
 ];                                                               // end of hiragana pool
@@ -124,7 +124,7 @@ const KATAKANA_POOL = [                                         // list of basic
   { glyph: 'ロ', romanji: 'ro' },                                // ロ -> "ro"
 
   { glyph: 'ワ', romanji: 'wa' },                                // ワ -> "wa"
-  { glyph: 'ヲ', romanji: 'o' },                                 // ヲ -> pronounced "o" in modern Japanese
+  { glyph: 'ヲ', romanji: 'w/o' },                                 // ヲ -> pronounced "o" in modern Japanese
 
   { glyph: 'ン', romanji: 'n' },                                 // ン -> final "n" sound
 ];                                                               // end of katakana pool

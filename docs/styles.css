@@ -11,11 +11,15 @@
 }
 
 /* Global document styling */
+html {                         /* root element of the page */
+  min-height: 100%;            /* ensure it’s at least as tall as the viewport */
+}
+
 body {
   background-position: center 0; /* Start background from a known spot. */
   /* remove the default page gap */
   margin: 0;
-
+  min-height: 100%;                            /* also stretch the body to full viewport height */
   font-family: var(--font);                    /* Inherit font to all text unless overridden */
   color: var(--text);                          /* Default text color site-wide */
 
@@ -200,6 +204,7 @@ header::after {                       /* decorative shadow element AFTER header 
   border-radius: 0 0 10px 10px;               /* rounded bottom corners */
   margin-top: 0;                              /* no extra space above */
   padding: 0.75rem 1rem;                      /* breathing room for content */
+  max-width: 100%;                        /* don’t let the panel itself exceed the window */
 }
 
 /* simple keyframes for the fade-in */
