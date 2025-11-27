@@ -323,15 +323,9 @@ header::after {                       /* decorative shadow element AFTER header 
 
 .inline-quiz .choices {                    /* layout for the container holding the four answers */
   display: grid;                           /* use CSS grid to arrange the buttons */
-  grid-template-columns: 1fr;              /* default: single column layout */
+  grid-template-columns: 1fr 1fr;              /* default: single column layout */
   gap: 0.5rem;                             /* space between the buttons */
   margin-bottom: 0.75rem;                  /* breathing room under the answers */
-}
-
-@media (min-width: 600px) {                /* apply these styles only on screens 600px wide or more */
-  .inline-quiz .choices {                  /* change layout for larger screens */
-    grid-template-columns: 1fr 1fr;        /* two equal-width columns (2 buttons per row) */
-  }
 }
 
 .inline-quiz button.choice {        /* each answer button */
@@ -352,7 +346,6 @@ header::after {                       /* decorative shadow element AFTER header 
   border-color: rgba(0, 0, 0, 0.30);                /* soften the border even more when disabled */
   background: var(--brand);                         /* keep the same base color (or adjust if you prefer) */
 }
-
 
 .inline-quiz .next {
   width: 10%;                      /* full width for easy tapping */
@@ -377,4 +370,28 @@ header::after {                       /* decorative shadow element AFTER header 
   color: var(--text);
   font-weight: 700;                 /* emphasize score */
   margin-top: 0.5rem;               /* space above score */
+}
+
+/* ----- MOBILE SETTINGS ----- */
+@media (max-width: 800px) {                /* apply these styles only on screens 600px wide or more */
+  .inline-quiz .choices {                  /* change layout for larger screens */
+    grid-template-columns: 1fr;        /* two equal-width columns (2 buttons per row) */
+  }
+  .inline-quiz h3 {                    /* question heading inside the quiz */
+    font-size: 2rem;                 /* make the heading text larger */
+  }
+  .inline-quiz button.choice {
+    font-size: 1.5rem;
+  }
+  .inline-quiz .next {
+    font-size: 1.5rem;
+    width: auto;                       /* let it shrink to content size */
+    display: inline-block;             /* keep it sized to its text */
+  }
+  .inline-quiz .status {               /* feedback text like “Correct!” */
+    font-size: 1.4rem;                 /* bump up the size a bit */
+  }
+  .inline-quiz .score {                /* final score display */
+    font-size: 1.4rem;                 /* make the score stand out more */
+  }
 }
