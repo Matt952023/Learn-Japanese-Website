@@ -112,6 +112,8 @@ header::after {                       /* decorative shadow element AFTER header 
 .alphabet .gana-chart {                     /* and the Hiragana table */
   border-collapse: collapse;                /* merge adjacent cell borders so no gaps can show */
   border-spacing: 0;                        /* extra safety: kill any spacing (Safari/old UA quirks) */
+  width: 100%;                              /* let them shrink to fit the panel */
+  table-layout: fixed;                      /* distribute column widths evenly */
 }
 
 /* Cells that contain kana glyphs */
@@ -204,7 +206,8 @@ header::after {                       /* decorative shadow element AFTER header 
   border-radius: 0 0 10px 10px;               /* rounded bottom corners */
   margin-top: 0;                              /* no extra space above */
   padding: 0.75rem 1rem;                      /* breathing room for content */
-  max-width: 100%;                        /* don’t let the panel itself exceed the window */
+  overflow-x: auto;                           /* allow horizontal scrolling if table is wider */
+  max-width: 100%;                            /* don’t let the panel itself exceed the window */
 }
 
 /* simple keyframes for the fade-in */
