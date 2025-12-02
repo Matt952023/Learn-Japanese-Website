@@ -53,7 +53,7 @@ body {
 }
 
 /* Keep your content above the layer */
-header, .alphabet, .learning {                               /* Lift header and main above .bg-slow */
+header, .alphabet, .learning, .ai-tutor {                               /* Lift header and main above .bg-slow */
   position: relative;                             /* Create stacking context */
   z-index: 1;                                     /* Ensure they sit on top */
 }
@@ -233,10 +233,6 @@ header::after {                       /* decorative shadow element AFTER header 
   border-radius: 16px;               /* nice rounded corners */
   padding: 1.25rem;                  /* inner breathing room */
   box-shadow: 0 10px 25px rgba(0,0,0,0.50); /* soft drop shadow */
-
-  --glyph-size: clamp(3.6rem, 6vw, 5rem);         /* big kana characters: min 1.8rem, scale with viewport, cap at 3.6rem */
-  --label-size: clamp(1.8rem, 3vw, 2.5rem);       /* smaller row/column labels so kana stay dominant */
-  --cell-pad: clamp(0.7rem, 1.2vw, 0.75rem);      /* cell padding that scales mildly with screen size */
 }
 
 .lesson-content,.quiz-content {               /* visible content panel */
@@ -407,4 +403,133 @@ header::after {                       /* decorative shadow element AFTER header 
   .inline-quiz .score {                /* final score display */
     font-size: 1.4rem;                 /* make the score stand out more */
   }
+}
+
+
+
+
+/* ====== AI ASSISTANT ===== */
+.ai-tutor {                          /* targets your <main class="alphabet"> wrapper */
+  max-width: 900px;                  /* keeps the window from getting too wide */
+  margin: 10rem auto;                 /* centers horizontally with space above/below */
+  background: var(--brand);          /* background color for the window */
+  border-radius: 16px;               /* nice rounded corners */
+  padding: 1.25rem;                  /* inner breathing room */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.50); /* soft drop shadow */
+}
+
+.ai-tutor p {
+  margin-bottom: 2rem;
+}
+
+.ai-tutor .chatbox {              /* target the chatbox inside your AI Tutor section */
+  display: flex;                              /* stack messages in a flex column */
+  flex-direction: column;                     /* messages go top → bottom */
+  /* keep your existing styles: height, padding, shadow, etc. */
+  border-radius: 8px;             /* slightly rounded corners */
+  padding: 0.5rem;                /* space between border and messages */
+  height: 500px;              /* limit height so it can scroll */
+  overflow-y: auto;               /* show vertical scrollbar when content is too tall */
+  background: var(--panel);            /* white background for messages */
+  font-size: 1rem;              /* slightly smaller text if you like */
+  color: var(--text);
+
+  /* inner shadow */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.20); 
+  /* inset  -> makes the shadow inside the box instead of outside
+     0      -> horizontal offset (no shift left/right)
+     0      -> vertical offset (no shift up/down)
+     8px    -> blur radius (how soft the shadow is)
+     rgba(...) -> color + transparency of the shadow */
+}
+
+.ai-tutor .input-row {                /* row that holds the message box and the Send button */
+  display: flex;                      /* place children in a horizontal row */
+  width: 100%;                        /* row spans full width of the AI Tutor section */
+  box-sizing: border-box;             /* include padding/border inside this width */
+  gap: 0.5rem;                        /* small horizontal gap between textarea and button */
+  margin-top: 1rem;                   /* space above the row (from the chatbox) */
+  align-items: flex-start;            /* ❗ children align to the top, no vertical stretching */
+}
+
+.ai-tutor #message-input {                    /* textarea where the user types their message */
+  border-radius: 8px;                         /* slightly rounded corners */
+  background: var(--panel);                   /* reuse your panel background color */
+  flex: 1;                                    /* let textarea grow to fill available horizontal space */
+  box-sizing: border-box;                     /* include padding and border inside its width */
+  padding: 0.5rem;                            /* inner space so text isn't against the edge */
+  font-size: 1rem;                            /* comfortable text size */
+
+  min-height: 3rem;                         /* starting height (about one line) */
+  max-height: 8rem;                           /* maximum height before scrolling kicks in */
+  overflow-y: auto;                           /* vertical scrollbar appears when content is too tall */
+  resize: vertical;                           /* allow user to drag to make it taller if they want */
+  flex: 1 1 auto;
+
+    /* inner shadow */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.20); 
+  /* inset  -> makes the shadow inside the box instead of outside
+     0      -> horizontal offset (no shift left/right)
+     0      -> vertical offset (no shift up/down)
+     8px    -> blur radius (how soft the shadow is)
+     rgba(...) -> color + transparency of the shadow */
+}
+
+.ai-tutor #send-btn {                        /* Send button inside AI Tutor section */
+  padding: 0.6rem 0.75rem;          
+  border-radius: 8px;               
+  border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.3);        /* DIM the existing border without changing its style */
+  background: var(--brand);                  /* reuse brand background color */
+  font-weight: 700;                          /* bold text like quiz choices */
+  color: var(--text);                        /* same text color */
+  font-size: 1.2rem;                         /* slightly smaller than quiz text, but still noticeable */
+  cursor: pointer;                           /* show pointer cursor on hover */
+  flex: 0 0 auto;                            /* keep button at its natural width (don’t stretch) */
+  min-width: 110px;                          /* fixed-ish width so it feels consistent */
+}
+
+.ai-tutor #send-btn:hover:not(:disabled) { /* when hovering over an active button */
+  filter: brightness(0.97);                      /* make the whole button just a bit darker */
+}
+
+.ai-tutor #send-btn:active:not(:disabled) { /* when pressing the button */
+  filter: brightness(0.92);                       /* darker while pressed */
+  transform: translateY(1px);                     /* tiny downward nudge for a “press” feel */
+}
+
+.ai-tutor .chat-message {                     /* base style for every message bubble */
+  max-width: 75%;                             /* bubble won't be wider than 75% of the chatbox */
+  padding: 0.4rem 0.6rem;                     /* inner space around the text */
+  border-radius: 12px;                        /* rounded corners */
+  margin-bottom: 0.4rem;                      /* space below each bubble */
+}
+
+/* user messages: align to the right */
+.ai-tutor .chat-message.from-user {
+  align-self: flex-end;                       /* push bubble to the right side */
+  background: rgb(133, 234, 133);           /* slightly more saturated user bubble */
+  color: var(--text);                         /* text color (usually dark on light background) */
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);    /* soft shadow */
+}
+
+/* tutor messages: align to the left */
+.ai-tutor .chat-message.from-tutor {
+  align-self: flex-start;                     /* keep bubble on the left side */
+  background: rgb(178, 196, 178);           /* light blue tutor bubble */
+  color: var(--text);                         /* same text color */
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);    /* soft shadow */
+}
+
+/* labels inside bubbles */
+.ai-tutor .chat-message .sender-label {
+  display: inline-block;                      /* keep label on same line as text */
+  font-weight: 700;                           /* bold label */
+  opacity: 0.85;                              /* slightly dimmer than pure white/black */
+  margin-right: 0.25rem;                      /* tiny gap between label and message text */
+}
+
+/* message text styling (optional, you already use var(--text)) */
+.ai-tutor .chat-message .message-text {
+  color: inherit;                             /* use bubble's text color */
 }

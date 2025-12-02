@@ -274,10 +274,26 @@
                     </ul>
             </section>
         </section>
+
+        <section class="ai-tutor">
+            <h2 id="ai-heading">AI Tutor</h2>
+            <p>An AI assistant that will help answer Japanese language-related questions.</p>
+            <!-- <label>
+                ChatGPT API Key:
+                <input id="token-input" type="password" placeholder="Enter API Key here">
+            </label> -->
+            <div class="chatbox"></div>
+            <div class="input-row">
+                <textarea id="message-input" placeholder="Ask the AI a question here"></textarea>
+                <button id="send-btn" type="button">Send</button>
+            </div>
+        </section>
+
     <!-- Javascript files go here:-->
     <script src="alphabet-table.js" defer></script>              <!-- Adds tab functionality to alphabets window-->
     <script src="lesson-table.js" defer></script>       <!-- Adds tab functionality to lessons & quizzes window-->
     <script src="romanji.js" defer></script>            <!-- load script that adds romanization underneath alphabet -->
-    <script src="quiz-inline.js" defer></script>
+    <script src="quiz-inline.js" defer></script>        <!-- Contains the logic that makes the quiz functionality work-->
+    <script src="ai-tutor.js" defer></script>
     </body>
 </html>
