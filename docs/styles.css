@@ -109,7 +109,7 @@ header::after {                       /* decorative shadow element AFTER header 
   font-size: clamp(2rem, 3.2vw, 2.5rem);               /* fluid size: modest min/max so it doesn’t explode */
   font-weight: 800;                                    /* strong amount of bolding on the text */
   line-height: 1.1;                                    /* tighten vertical leading around the text */
-  margin-block: 0.25em 0.5em;                          /* smaller top/bottom margins, scale with font size */
+  margin-block: 0.75em 1em;                          /* smaller top/bottom margins, scale with font size */
   text-align: center;                                  /* center the heading text */
 }
 

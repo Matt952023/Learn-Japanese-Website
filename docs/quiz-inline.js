@@ -129,6 +129,86 @@ const KATAKANA_POOL = [                                         // list of basic
   { glyph: 'ン', romanji: 'n' },                                 // ン -> final "n" sound
 ];                                                               // end of katakana pool
 
+const HIRAGANA_DAKUTEN_AND_HANDAKUTEN_POOL = [      // array of voiced (dakuten) hiragana characters
+  { glyph: 'が', romanji: 'ga' },                   // が -> "ga"  (voiced version of か)
+  { glyph: 'ぎ', romanji: 'gi' },                   // ぎ -> "gi"  (voiced version of き)
+  { glyph: 'ぐ', romanji: 'gu' },                   // ぐ -> "gu"  (voiced version of く)
+  { glyph: 'げ', romanji: 'ge' },                   // げ -> "ge"  (voiced version of け)
+  { glyph: 'ご', romanji: 'go' },                   // ご -> "go"  (voiced version of こ)
+
+  { glyph: 'ざ', romanji: 'za' },                   // ざ -> "za"  (voiced version of さ)
+  { glyph: 'じ', romanji: 'ji' },                   // じ -> "ji"  (voiced version of し)
+  { glyph: 'ず', romanji: 'zu' },                   // ず -> "zu"  (voiced version of す)
+  { glyph: 'ぜ', romanji: 'ze' },                   // ぜ -> "ze"  (voiced version of せ)
+  { glyph: 'ぞ', romanji: 'zo' },                   // ぞ -> "zo"  (voiced version of そ)
+
+  { glyph: 'だ', romanji: 'da' },                   // だ -> "da"  (voiced version of た)
+  { glyph: 'ぢ', romanji: 'ji' },                   // ぢ -> "ji"  (pronounced "ji", rare in modern usage)
+  { glyph: 'づ', romanji: 'zu' },                   // づ -> "zu"  (pronounced "zu", rare in modern usage)
+  { glyph: 'で', romanji: 'de' },                   // で -> "de"  (voiced version of て)
+  { glyph: 'ど', romanji: 'do' },                   // ど -> "do"  (voiced version of と)
+
+  { glyph: 'ば', romanji: 'ba' },                   // ば -> "ba"  (voiced version of は)
+  { glyph: 'び', romanji: 'bi' },                   // び -> "bi"  (voiced version of ひ)
+  { glyph: 'ぶ', romanji: 'bu' },                   // ぶ -> "bu"  (voiced version of ふ)
+  { glyph: 'べ', romanji: 'be' },                   // べ -> "be"  (voiced version of へ)
+  { glyph: 'ぼ', romanji: 'bo' },                   // ぼ -> "bo"  (voiced version of ほ)
+
+  { glyph: 'ぱ', romanji: 'pa' },                   // ぱ -> "pa"  (p-sound from は row)
+  { glyph: 'ぴ', romanji: 'pi' },                   // ぴ -> "pi"  (p-sound from ひ row)
+  { glyph: 'ぷ', romanji: 'pu' },                   // ぷ -> "pu"  (p-sound from ふ row)
+  { glyph: 'ぺ', romanji: 'pe' },                   // ぺ -> "pe"  (p-sound from へ row)
+  { glyph: 'ぽ', romanji: 'po' },                   // ぽ -> "po"  (p-sound from ほ row)
+];                                                  
+
+const KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL = [                     // array of voiced (dakuten) katakana characters
+  { glyph: 'ガ', romanji: 'ga' },                   // ガ -> "ga"  (voiced version of カ)
+  { glyph: 'ギ', romanji: 'gi' },                   // ギ -> "gi"  (voiced version of キ)
+  { glyph: 'グ', romanji: 'gu' },                   // グ -> "gu"  (voiced version of ク)
+  { glyph: 'ゲ', romanji: 'ge' },                   // ゲ -> "ge"  (voiced version of ケ)
+  { glyph: 'ゴ', romanji: 'go' },                   // ゴ -> "go"  (voiced version of コ)
+
+  { glyph: 'ザ', romanji: 'za' },                   // ザ -> "za"  (voiced version of サ)
+  { glyph: 'ジ', romanji: 'ji' },                   // ジ -> "ji"  (voiced version of シ)
+  { glyph: 'ズ', romanji: 'zu' },                   // ズ -> "zu"  (voiced version of ス)
+  { glyph: 'ゼ', romanji: 'ze' },                   // ゼ -> "ze"  (voiced version of セ)
+  { glyph: 'ゾ', romanji: 'zo' },                   // ゾ -> "zo"  (voiced version of ソ)
+
+  { glyph: 'ダ', romanji: 'da' },                   // ダ -> "da"  (voiced version of タ)
+  { glyph: 'ヂ', romanji: 'ji' },                   // ヂ -> "ji"  (pronounced "ji", rare in modern usage)
+  { glyph: 'ヅ', romanji: 'zu' },                   // ヅ -> "zu"  (pronounced "zu", rare in modern usage)
+  { glyph: 'デ', romanji: 'de' },                   // デ -> "de"  (voiced version of テ)
+  { glyph: 'ド', romanji: 'do' },                   // ド -> "do"  (voiced version of ト)
+
+  { glyph: 'バ', romanji: 'ba' },                   // バ -> "ba"  (voiced version of ハ)
+  { glyph: 'ビ', romanji: 'bi' },                   // ビ -> "bi"  (voiced version of ヒ)
+  { glyph: 'ブ', romanji: 'bu' },                   // ブ -> "bu"  (voiced version of フ)
+  { glyph: 'ベ', romanji: 'be' },                   // ベ -> "be"  (voiced version of ヘ)
+  { glyph: 'ボ', romanji: 'bo' },                   // ボ -> "bo"  (voiced version of ホ)
+
+  { glyph: 'パ', romanji: 'pa' },                   // パ -> "pa"  (p-sound from ハ row)
+  { glyph: 'ピ', romanji: 'pi' },                   // ピ -> "pi"  (p-sound from ヒ row)
+  { glyph: 'プ', romanji: 'pu' },                   // プ -> "pu"  (p-sound from フ row)
+  { glyph: 'ペ', romanji: 'pe' },                   // ペ -> "pe"  (p-sound from ヘ row)
+  { glyph: 'ポ', romanji: 'po' },                   // ポ -> "po"  (p-sound from ホ row)
+];                                                  
+
+const HIRAGANA_ALL_POOL = [
+  ...HIRAGANA_POOL,
+  ...HIRAGANA_DAKUTEN_AND_HANDAKUTEN_POOL
+]
+
+const KATAKANA_ALL_POOL = [
+  ...KATAKANA_POOL,
+  ...KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL
+]
+
+const ALL_KANA_POOL = [
+  ...HIRAGANA_POOL,
+  ...KATAKANA_POOL,
+  ...HIRAGANA_DAKUTEN_AND_HANDAKUTEN_POOL,
+  ...KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL
+]
 
 // (Optional advanced) You can also **derive** these pools from your existing tables instead of hardcoding.
 // For example, query the cells in #hiragana / #katakana and map glyph → romaji via your romanji.js mapping.
@@ -240,18 +320,37 @@ if (learningWindow) {                                                    // guar
     const btn = e.target.closest('button.start-quiz');                   // look for a Start button
     if (!btn) return;                                                    // ignore other clicks
 
-    const rawMode = btn.getAttribute('data-mode');        // read the value from data-mode (e.g. "hiragana")
-    const mode = (rawMode || '').trim().toLowerCase();   // handle null, trim spaces, and lowercase it
+    const rawMode = btn.getAttribute('data-mode');                       // read the value from data-mode (e.g. "hiragana")
+    const mode = (rawMode || '').trim().toLowerCase();                   // handle null, trim spaces, and lowercase it
     const host = btn.parentElement.querySelector('.quiz-host');          // the div where we inject UI
-    let pool;                                               // will hold the chosen question set
-    if (mode === 'katakana') {                              // if the button says "katakana"
-      pool = KATAKANA_POOL;                                 // use the katakana data array
-    } else if (mode === 'hiragana') {                       // if the button says "hiragana"
-      pool = HIRAGANA_POOL;                                 // use the hiragana data array
-    } else {                                                // anything else is unexpected
-      console.warn('Unknown quiz mode:', rawMode);          // log a warning in the browser console
-      return;                                               // stop here so we don’t run a broken quiz
-    }
+    let pool;                                              // will hold the chosen question set
+    switch (mode) {                                        // look at the value stored in 'mode'
+      case 'katakana-basic':                               // if mode is exactly the string "katakana-basic"
+        pool = KATAKANA_POOL;                              //   use the basic katakana quiz data
+        break;                                             //   stop here, don't check other cases
+      case 'hiragana-basic':                               // if mode is exactly the string "hiragana-basic"
+        pool = HIRAGANA_POOL;                              //   use the hiragana quiz data
+        break;                                             //   stop here, don't check other cases
+      case 'hiragana-dakuten-handakuten':                  // if mode is exactly the string "hiragana-dakuten-handakuten"
+        pool = HIRAGANA_DAKUTEN_AND_HANDAKUTEN_POOL;                              
+        break;
+      case 'katakana-dakuten-handakuten':                  // if mode is exactly the string "katagana-dakuten-handakuten"
+        pool = KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL;                              
+        break;
+      case 'hiragana-all':                                 // if mode is exactly the string "hirigana-all"
+        pool = HIRAGANA_ALL_POOL;                              // includes all hirigana including dakuten and handakuten
+        break;
+      case 'katakana-all':                                 // if mode is exactly the string "katakana-all"
+        pool = KATAKANA_ALL_POOL;                              // includes all katakana including dakuten and handakuten
+        break;
+      case 'all':                                          // if mode is exactly the string "both"
+        pool = ALL_KANA_POOL;                              //   use the combined hiragana + katakana + dakuten + handakuten pool
+        break;                                             //   stop here, don't fall through to default
+      default:                                             // if 'mode' didn't match any case above
+        console.warn('Unknown quiz mode:', rawMode);       //   show a warning in the browser console
+        return;                                            //   exit the function so quiz doesn't run broken
+    }                                                      // end of switch block
+
 
     // open the details block (so the quiz is visible)
     const details = btn.closest('details');                              // find wrapping <details>
