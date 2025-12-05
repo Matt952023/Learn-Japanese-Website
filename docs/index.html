@@ -103,6 +103,26 @@
                         <tr><th>p</th><td>ぱ</td><td>ぴ</td><td>ぷ</td><td>ぺ</td><td>ぽ</td></tr>
                     </tbody>
                 </table>
+
+                <table class="gana-chart">
+                    <h2>Yōon</h2>
+                    <thead>
+                        <tr><th></th><th>ya</th><th>yu</th><th>yo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th>k</th><td>きゃ</td><td>きゅ</td><td>きょ</td></tr>
+                        <tr><th>g</th><td>ぎゃ</td><td>ぎゅ</td><td>ぎょ</td></tr>
+                        <tr><th>sh</th><td>しゃ</td><td>しゅ</td><td>しょ</td></tr>
+                        <tr><th>j</th><td>じゃ</td><td>じゅ</td><td>じょ</td></tr>
+                        <tr><th>ch</th><td>ちゃ</td><td>ちゅ</td><td>ちょ</td></tr>
+                        <tr><th>n</th><td>にゃ</td><td>にゅ</td><td>にょ</td></tr>
+                        <tr><th>h</th><td>ひゃ</td><td>ひゅ</td><td>ひょ</td></tr>
+                        <tr><th>b</th><td>びゃ</td><td>びゅ</td><td>びょ</td></tr>
+                        <tr><th>p</th><td>ぴゃ</td><td>ぴゅ</td><td>ぴょ</td></tr>
+                        <tr><th>m</th><td>みゃ</td><td>みゅ</td><td>みょ</td></tr>
+                        <tr><th>r</th><td>りゃ</td><td>りゅ</td><td>ちょ</td></tr>
+                    </tbody>
+                </table>
             </section>
 
             <!-- must match href="#katakana" -->
@@ -148,6 +168,26 @@
                         <tr><th>p</th><td>パ</td><td>ピ</td><td>プ</td><td>ペ</td><td>ポ</td></tr>
                     </tbody>
 
+                </table>
+
+                <table class="kana-chart">
+                    <h2>Yōon</h2>
+                        <thead>
+                            <tr><th></th><th>ya</th><th>yu</th><th>yo</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>k</th><td>キャ</td><td>キュ</td><td>キョ</td></tr>
+                            <tr><th>g</th><td>ギャ</td><td>ギュ</td><td>ギョ</td></tr>
+                            <tr><th>sh</th><td>シャ</td><td>シュ</td><td>ショ</td></tr>
+                            <tr><th>j</th><td>ジャ</td><td>ジュ</td><td>ジョ</td></tr>
+                            <tr><th>ch</th><td>チャ</td><td>チュ</td><td>チョ</td></tr>
+                            <tr><th>n</th><td>ニャ</td><td>ニュ</td><td>ニョ</td></tr>
+                            <tr><th>h</th><td>ヒャ</td><td>ヒュ</td><td>ヒョ</td></tr>
+                            <tr><th>b</th><td>ビャ</td><td>ビュ</td><td>ビョ</td></tr>
+                            <tr><th>p</th><td>ピャ</td><td>ピュ</td><td>ピョ</td></tr>
+                            <tr><th>m</th><td>ミャ</td><td>ミュ</td><td>ミョ</td></tr>
+                            <tr><th>r</th><td>リャ</td><td>リュ</td><td>リョ</td></tr>
+                        </tbody>
                 </table>
             </section>
         </main>
@@ -335,6 +375,38 @@
 
                     <li> <!-- quiz row 5 -->
                         <details class="item">
+                        <summary>Hirgana Yōon Characters — 10 Questions</summary>
+                        <div class="item-body">
+                            <p>10 questions, multiple choice. Score shown at the end.</p>
+                            <!-- class="start-quiz" = hook for JS -->
+                            <button
+                            type="button"
+                            class="start-quiz"
+                            data-mode="hiragana-yoon"
+                            >Start Hiragana Quiz</button>
+                            <div class="quiz-host"></div>                   <!-- JS injects the quiz UI here -->
+                        </div>
+                        </details>
+                    </li>
+
+                    <li> <!-- quiz row 6 -->
+                        <details class="item">
+                        <summary>Katakana Yōon Characters — 10 Questions</summary>
+                        <div class="item-body">
+                            <p>10 questions, multiple choice. Score shown at the end.</p>
+                            <!-- class="start-quiz" = hook for JS -->
+                            <button
+                            type="button"
+                            class="start-quiz"
+                            data-mode="katakana-yoon"
+                            >Start Katakana Quiz</button>
+                            <div class="quiz-host"></div>                   <!-- JS injects the quiz UI here -->
+                        </div>
+                        </details>
+                    </li>
+
+                    <li> <!-- quiz row 7 -->
+                        <details class="item">
                         <summary>All Hiragana Characters — 10 Questions</summary>
                         <div class="item-body">
                             <p>10 questions, multiple choice. Score shown at the end.</p>
@@ -346,9 +418,10 @@
                             >Start Hiragana Quiz</button>
                             <div class="quiz-host"></div>                   <!-- JS injects the quiz UI here -->
                         </div>
+                        </details>
                     </li>
 
-                    <li> <!-- quiz row 6 -->
+                    <li> <!-- quiz row 8 -->
                         <details class="item">
                         <summary>All Katakana Characters — 10 Questions</summary>
                         <div class="item-body">
@@ -364,7 +437,7 @@
                         </details>
                     </li>
 
-                    <li> <!-- quiz row 7 -->
+                    <li> <!-- quiz row 9 -->
                         <details class="item">
                         <summary>All Hiragana & Katakana Characters — 10 Questions</summary>
                         <div class="item-body">
@@ -379,7 +452,6 @@
                         </div>
                         </details>
                     </li>
-                    </details>
                     </ul>
             </section>
         </section>

@@ -191,23 +191,119 @@ const KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL = [                     // array of v
   { glyph: 'プ', romanji: 'pu' },                   // プ -> "pu"  (p-sound from フ row)
   { glyph: 'ペ', romanji: 'pe' },                   // ペ -> "pe"  (p-sound from ヘ row)
   { glyph: 'ポ', romanji: 'po' },                   // ポ -> "po"  (p-sound from ホ row)
-];                                                  
+];
+
+const HIRAGANA_YOON_POOL = [                                   // array of hiragana yōon combos
+  { glyph: 'きゃ', romanji: 'kya' },                            // きゃ -> "kya"
+  { glyph: 'きゅ', romanji: 'kyu' },                            // きゅ -> "kyu"
+  { glyph: 'きょ', romanji: 'kyo' },                            // きょ -> "kyo"
+
+  { glyph: 'ぎゃ', romanji: 'gya' },                            // ぎゃ -> "gya"
+  { glyph: 'ぎゅ', romanji: 'gyu' },                            // ぎゅ -> "gyu"
+  { glyph: 'ぎょ', romanji: 'gyo' },                            // ぎょ -> "gyo"
+
+  { glyph: 'しゃ', romanji: 'sha' },                            // しゃ -> "sha" (shi + small ya)
+  { glyph: 'しゅ', romanji: 'shu' },                            // しゅ -> "shu" (shi + small yu)
+  { glyph: 'しょ', romanji: 'sho' },                            // しょ -> "sho" (shi + small yo)
+
+  { glyph: 'じゃ', romanji: 'ja' },                             // じゃ -> "ja"  (ji + small ya)
+  { glyph: 'じゅ', romanji: 'ju' },                             // じゅ -> "ju"  (ji + small yu)
+  { glyph: 'じょ', romanji: 'jo' },                             // じょ -> "jo"  (ji + small yo)
+
+  { glyph: 'ちゃ', romanji: 'cha' },                            // ちゃ -> "cha"
+  { glyph: 'ちゅ', romanji: 'chu' },                            // ちゅ -> "chu"
+  { glyph: 'ちょ', romanji: 'cho' },                            // ちょ -> "cho"
+
+  { glyph: 'にゃ', romanji: 'nya' },                            // にゃ -> "nya"
+  { glyph: 'にゅ', romanji: 'nyu' },                            // にゅ -> "nyu"
+  { glyph: 'にょ', romanji: 'nyo' },                            // にょ -> "nyo"
+
+  { glyph: 'ひゃ', romanji: 'hya' },                            // ひゃ -> "hya"
+  { glyph: 'ひゅ', romanji: 'hyu' },                            // ひゅ -> "hyu"
+  { glyph: 'ひょ', romanji: 'hyo' },                            // ひょ -> "hyo"
+
+  { glyph: 'びゃ', romanji: 'bya' },                            // びゃ -> "bya"
+  { glyph: 'びゅ', romanji: 'byu' },                            // びゅ -> "byu"
+  { glyph: 'びょ', romanji: 'byo' },                            // びょ -> "byo"
+
+  { glyph: 'ぴゃ', romanji: 'pya' },                            // ぴゃ -> "pya"
+  { glyph: 'ぴゅ', romanji: 'pyu' },                            // ぴゅ -> "pyu"
+  { glyph: 'ぴょ', romanji: 'pyo' },                            // ぴょ -> "pyo"
+
+  { glyph: 'みゃ', romanji: 'mya' },                            // みゃ -> "mya"
+  { glyph: 'みゅ', romanji: 'myu' },                            // みゅ -> "myu"
+  { glyph: 'みょ', romanji: 'myo' },                            // みょ -> "myo"
+
+  { glyph: 'りゃ', romanji: 'rya' },                            // りゃ -> "rya"
+  { glyph: 'りゅ', romanji: 'ryu' },                            // りゅ -> "ryu"
+  { glyph: 'りょ', romanji: 'ryo' },                            // りょ -> "ryo"
+];                                                              // end HIRAGANA_YOON_POOL
+
+const KATAKANA_YOON_POOL = [                                   // array of katakana yōon combos
+  { glyph: 'キャ', romanji: 'kya' },                            // キャ -> "kya"
+  { glyph: 'キュ', romanji: 'kyu' },                            // キュ -> "kyu"
+  { glyph: 'キョ', romanji: 'kyo' },                            // キョ -> "kyo"
+
+  { glyph: 'ギャ', romanji: 'gya' },                            // ギャ -> "gya"
+  { glyph: 'ギュ', romanji: 'gyu' },                            // ギュ -> "gyu"
+  { glyph: 'ギョ', romanji: 'gyo' },                            // ギョ -> "gyo"
+
+  { glyph: 'シャ', romanji: 'sha' },                            // シャ -> "sha"
+  { glyph: 'シュ', romanji: 'shu' },                            // シュ -> "shu"
+  { glyph: 'ショ', romanji: 'sho' },                            // ショ -> "sho"
+
+  { glyph: 'ジャ', romanji: 'ja' },                             // ジャ -> "ja"
+  { glyph: 'ジュ', romanji: 'ju' },                             // ジュ -> "ju"
+  { glyph: 'ジョ', romanji: 'jo' },                             // ジョ -> "jo"
+
+  { glyph: 'チャ', romanji: 'cha' },                            // チャ -> "cha"
+  { glyph: 'チュ', romanji: 'chu' },                            // チュ -> "chu"
+  { glyph: 'チョ', romanji: 'cho' },                            // チョ -> "cho"
+
+  { glyph: 'ニャ', romanji: 'nya' },                            // ニャ -> "nya"
+  { glyph: 'ニュ', romanji: 'nyu' },                            // ニュ -> "nyu"
+  { glyph: 'ニョ', romanji: 'nyo' },                            // ニョ -> "nyo"
+
+  { glyph: 'ヒャ', romanji: 'hya' },                            // ヒャ -> "hya"
+  { glyph: 'ヒュ', romanji: 'hyu' },                            // ヒュ -> "hyu"
+  { glyph: 'ヒョ', romanji: 'hyo' },                            // ヒョ -> "hyo"
+
+  { glyph: 'ビャ', romanji: 'bya' },                            // ビャ -> "bya"
+  { glyph: 'ビュ', romanji: 'byu' },                            // ビュ -> "byu"
+  { glyph: 'ビョ', romanji: 'byo' },                            // ビョ -> "byo"
+
+  { glyph: 'ピャ', romanji: 'pya' },                            // ピャ -> "pya"
+  { glyph: 'ピュ', romanji: 'pyu' },                            // ピュ -> "pyu"
+  { glyph: 'ピョ', romanji: 'pyo' },                            // ピョ -> "pyo"
+
+  { glyph: 'ミャ', romanji: 'mya' },                            // ミャ -> "mya"
+  { glyph: 'ミュ', romanji: 'myu' },                            // ミュ -> "myu"
+  { glyph: 'ミョ', romanji: 'myo' },                            // ミョ -> "myo"
+
+  { glyph: 'リャ', romanji: 'rya' },                            // リャ -> "rya"
+  { glyph: 'リュ', romanji: 'ryu' },                            // リュ -> "ryu"
+  { glyph: 'リョ', romanji: 'ryo' },                            // リョ -> "ryo"
+];                                                              // end KATAKANA_YOON_POOL
 
 const HIRAGANA_ALL_POOL = [
   ...HIRAGANA_POOL,
-  ...HIRAGANA_DAKUTEN_AND_HANDAKUTEN_POOL
+  ...HIRAGANA_DAKUTEN_AND_HANDAKUTEN_POOL,
+  ...HIRAGANA_YOON_POOL
 ]
 
 const KATAKANA_ALL_POOL = [
   ...KATAKANA_POOL,
-  ...KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL
+  ...KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL,
+  ...KATAKANA_YOON_POOL
 ]
 
 const ALL_KANA_POOL = [
   ...HIRAGANA_POOL,
   ...KATAKANA_POOL,
   ...HIRAGANA_DAKUTEN_AND_HANDAKUTEN_POOL,
-  ...KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL
+  ...KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL,
+  ...HIRAGANA_YOON_POOL,
+  ...KATAKANA_YOON_POOL
 ]
 
 // (Optional advanced) You can also **derive** these pools from your existing tables instead of hardcoding.
@@ -336,6 +432,12 @@ if (learningWindow) {                                                    // guar
         break;
       case 'katakana-dakuten-handakuten':                  // if mode is exactly the string "katagana-dakuten-handakuten"
         pool = KATAKANA_DAKUTEN_AND_HANDAKUTEN_POOL;                              
+        break;
+      case 'hiragana-yoon':
+        pool = HIRAGANA_YOON_POOL;
+        break;
+      case 'katakana-yoon':
+        pool = KATAKANA_YOON_POOL;
         break;
       case 'hiragana-all':                                 // if mode is exactly the string "hirigana-all"
         pool = HIRAGANA_ALL_POOL;                              // includes all hirigana including dakuten and handakuten

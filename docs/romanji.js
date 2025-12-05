@@ -12,7 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {                   // wait 
     ['し','shi'], ['ち','chi'], ['つ','tsu'], ['ふ','fu'], ['を','w/o'], ['ん','n'],  // hiragana basics
     ['じ','ji'],  ['ず','zu'],  ['ぢ','ji'],  ['づ','zu'],                            // hiragana voiced
     ['シ','shi'], ['チ','chi'], ['ツ','tsu'], ['フ','fu'], ['ヲ','o'], ['ン','n'],    // katakana basics
-    ['ジ','ji'],  ['ズ','zu'],  ['ヂ','ji'],  ['ヅ','zu']                             // katakana voiced
+    ['ジ','ji'],  ['ズ','zu'],  ['ヂ','ji'],  ['ヅ','zu'],                            // katakana voiced
+
+    ['しゃ','sha'], ['しゅ','shu'], ['しょ','sho'],                                   // hiragana sh- yōon: sha / shu / sho
+    ['ちゃ','cha'], ['ちゅ','chu'], ['ちょ','cho'],                                   // hiragana ch- yōon: cha / chu / cho
+    ['じゃ','ja'], ['じゅ','ju'], ['じょ','jo'],                                      // hiragana j-  yōon: ja / ju / jo
+
+    ['シャ','sha'], ['シュ','shu'], ['ショ','sho'],                                   // katakana sh- yōon: sha / shu / sho
+    ['チャ','cha'], ['チュ','chu'], ['チョ','cho'],                                   // katakana ch- yōon: cha / chu / cho
+    ['ジャ','ja'], ['ジュ','ju'], ['ジョ','jo']                                       // katakana j-  yōon: ja / ju / jo
   ]);
 
   tables.forEach((table) => {                                           // process each table independently
